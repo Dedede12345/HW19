@@ -69,12 +69,12 @@ class NewsPage(Website):
         super(NewsPage, self).__init__(shortdomain, path="News_page")
         self.title = requests.request("GET", url).content[2461:2519]
 
+    def show_title(self):
+        print(self.title)
 
 
-
-
-f = HomePage("Home")
-print(f.create_url())
+home_page = HomePage("Home")
+print(home_page.create_url())
 
 dct = {
     "Swaroop": "+34523566756",
@@ -83,12 +83,7 @@ dct = {
     "HamApp": "8765456789"
 }
 
-g = ContactPage("contacts", **dct)
-h = NewsPage("sdff","https://www.bbc.com/news/uk-61052643").title
-print(h)
+contact_page = ContactPage("contacts", **dct)
+news_page = NewsPage("news", "https://www.bbc.com/news/uk-61052643")
 # Website("asdf")
 Website.show_amount_sites()
-
-
-
-

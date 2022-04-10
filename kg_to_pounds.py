@@ -16,8 +16,8 @@ class KgToPounds:
         else:
             raise ValueError("Only digits")
 
-    @classmethod
-    def to_pounds(cls, kg):
+    @staticmethod
+    def to_pounds(kg):
         return kg * 2.205
 
     def get_kg(self):
